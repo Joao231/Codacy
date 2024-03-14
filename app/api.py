@@ -26,14 +26,14 @@ def list_commits():
     
     git_wrapper = GitWrapper(github_url)
 
-    commit_list = git_wrapper.list_commits()
+    commit_dict = git_wrapper.list_commits()
     
-    if isinstance(commit_list, tuple):
-        if commit_list[1] == 404:
+    if isinstance(commit_dict, tuple):
+        if commit_dict[1] == 404:
             abort(404)
         abort(500)
     else:
-        return jsonify({'commits': commit_list}), 200
+        return jsonify({'commits': commit_dict}), 200
 
 
 @app.errorhandler(400)

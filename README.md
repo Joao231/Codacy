@@ -45,16 +45,17 @@ Usage:
 
 1. Endpoint for retrieving a list of commits for a given GitHub URL. This endpoint uses the code implemented in Part2 to retrieve the list of commits and then returns a json containing that list:
 
+* Start server: `python3 api.py`
 * Method: GET
 * Path: /list-commits
-* Response: List of commits or error
-* Example for testing: `curl -X GET http://localhost:8080/list-commits/<Github_URL>`
+* Response: Json of commits or error messages
+* Example for testing: `curl -X GET http://localhost:8080/list-commits\?url\=<Github_URL>`
 
 There is also unit testing file called test_api.py for this Flask API. First, it sets up the Flask test client, Make a request to the list-commits endpoint to retrieve the commits for the given GitHub URL. Finally, Check the response and status code. Eventually, we could also implement more tests to test more cases.
 
 Usage:
 
-* `python3 api.py <Github_URL>`
+* `python3 test_api.py <Github_URL>`
 
 
 
