@@ -1,0 +1,11 @@
+dashboards/
+images/
+tests/
+config.monitoring
+datasource.yml
+docker-compose.yaml
+Dockerfile
+prometheus.yaml
+README.md
+.gitignore
+.dockerignore
