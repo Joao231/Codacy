@@ -13,13 +13,13 @@ It is also noteworthy to mention the Prometheus, Grafana and Pagerduty integrati
 
 
 
-## Part 2 - List commits (Explain the logic behind it, the unit testing and how to run it):
+## Part 2 - List commits:
 
 The wrapper was implemented to use the git CLI by invoking shell commands to provide a list of commits for a given GitHub URL.
 
 First, we create a temporary directory to perform operations, then we initialize an empty git repository, add the remote repository,
 fetch all branches from the remote repository and retrieve the commit list. Finally, we parse the list of commit hashes into data structure
-of type List.
+of type Dict.
 
 Usage for unix systems:
 
@@ -31,7 +31,7 @@ Usage for unix systems:
 
 * `codacy-git --list-commits <Github_URL>`
 
-There is also unit testing file called test_wrapper.py for this wrapper. First, it creates a temporary directory for testing, creates an instance of GitWrapper and calls the list_commits method to retrieve the commits for the given GitHub URL. Finally, asserts if the result is 
+There is also unit testing file called test_wrapper.py for this wrapper. First, it creates a temporary directory for testing, creates an instance of GitWrapper and calls the list_commits method to retrieve the commits for the given GitHub URL. Finally, asserts if the number fo commits is 
 correct or not. We could also implement more tests to test the git cli using shell commands.
 
 Usage:
@@ -41,9 +41,9 @@ Usage:
 
 
 
-## Part 3 - API (explain the logic behind it, the unit testing and how to run it):
+## Part 3 - API:
 
-1. Endpoint for retrieving a list of commits for a given GitHub URL. This endpoint uses the code implemented in Part2 to retrieve the list of commits and then returns a json containing that list:
+1. Endpoint for retrieving a list of commits for a given GitHub URL. This endpoint uses the code implemented in Part2 to retrieve the commits and then returns a json containing those commits:
 
 * Start server: `python3 api.py`
 * Method: GET
