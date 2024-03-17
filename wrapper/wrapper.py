@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
 import argparse
 import subprocess
-import re
 import os
 import tempfile
-import shutil
 
 
 class GitWrapper:
-    def __init__(self, repo_url, subprocess_runner=subprocess.check_output):
+    def __init__(self, repo_url):
         self.repo_url = repo_url
-        self.subprocess_runner = subprocess_runner
 
     def list_commits(self):
  
