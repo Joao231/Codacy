@@ -27,7 +27,7 @@ class GitWrapper:
             commit_info = {}
     
             for branch in git_branch_output:
-                if branch.strip() == "" or 'remotes/origin/HEAD -> origin/master' in branch or 'remotes/origin/master' in branch:
+                if branch.strip() == "" or 'remotes/origin/HEAD -> origin/' in branch or '*' in branch:
                     continue
                 branch_name = branch.strip().replace("*", "").strip()
                 subprocess.run(["git", "checkout", "--quiet", branch_name], check=True)
